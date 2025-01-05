@@ -1,7 +1,7 @@
-import CategoryItem from './components/category-item/category-item.component';
-
 import './categories.styles.scss';
 
+// install sass
+// npm install -g sass
 const App = () => {
   const categories = [
     {
