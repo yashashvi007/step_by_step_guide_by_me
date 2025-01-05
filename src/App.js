@@ -27,26 +27,19 @@ const App = () => {
     },
   ];
 
-  // Ab ek chiz notice karo karishma ki category container wale div bar bar render ho rha hai map mai and hum title de rhe hai to iska component bana skte hai 
-  // what i want you to do is map ke under wale ke pure div ka component bana do 
-  // uske liye ek components ka ek folder banao
-  // uske under category-item.component.jsx ka file banao and title as a prop do usme
-  // <div className='categories-container'>
-  //   {categories.map(({ title }) => (
-  //       <div className='category-container'>
-  //           <div className='background-image' />
-  //           <div className='category-body-container'>
-  //               <h2>{title}</h2>
-  //               <p>Shop Now</p>
-  //           </div>
-  //       </div>
-  //   ))}
-  // </div>
+  // one main thing now App.js hamesh neat and clean and kam code hona chahiye to now 
+  //  <div className='categories-container'>
+  //             {categories.map((category) => (
+  //                 <CategoryItem key={category.id} category={category} />
+  //             ))}
+  //  </div>
+  // isko utha ke iska bhi ek compoent banao 
+  // and directly us component ko yha render karao
 
   return (
-    <div className='categories-container'>
-      {/* render the categories using map and categoryItem component  */}
-    </div>
+    <>
+      {/* yha karo us component ko render */}
+    </>
   );
 };
 
