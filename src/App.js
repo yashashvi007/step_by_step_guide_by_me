@@ -1,15 +1,8 @@
-const App = () => {
-  // okay so what we are doing here: kapdo ki category hogi and user select kr skta hai ki konsi category mai jana hai
-  // what i want you to do is now: despite ki mai bar bar 
-  // <div className='category-container'>
-  //       {/* <img /> */}
-  //       <div className='category-body-container'>
-  //         <h2>Hats</h2>
-  //         <p>Shop Now</p>
-  //       </div>
-  //  </div>
-  // aise sare categories ke divs render karu, i want ki sare categories ko map method lagake ke render karu
+import CategoryItem from './components/category-item/category-item.component';
 
+import './categories.styles.scss';
+
+const App = () => {
   const categories = [
     {
       id: 1,
@@ -33,53 +26,27 @@ const App = () => {
     },
   ];
 
-  // is categories ke array ko use karo and sari cateogories ko render karo map use krke
-  // things to take note of
-  // 1.map mai map(() => ()) and map(()=> return {}) mai kya difference hota hai
-  // map(()=> {}) ye error deta hai to please see that error too.
-  // 2. why we use key in map
-
+  // Ab ek chiz notice karo karishma ki category container wale div bar bar render ho rha hai map mai and hum title de rhe hai to iska component bana skte hai 
+  // what i want you to do is map ke under wale ke pure div ka component bana do 
+  // uske liye ek components ka ek folder banao
+  // uske under category-item.component.jsx ka file banao and title as a prop do usme
+  // <div className='categories-container'>
+  //   {categories.map(({ title }) => (
+  //       <div className='category-container'>
+  //           <div className='background-image' />
+  //           <div className='category-body-container'>
+  //               <h2>{title}</h2>
+  //               <p>Shop Now</p>
+  //           </div>
+  //       </div>
+  //   ))}
+  // </div>
 
   return (
     <div className='categories-container'>
-      <div className='category-container'>
-        {/* <img /> */}
-        <div className='category-body-container'>
-          <h2>Hats</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className='category-container'>
-        {/* <img /> */}
-        <div className='category-body-container'>
-          <h2>Jackets</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className='category-container'>
-        {/* <img /> */}
-        <div className='category-body-container'>
-          <h2>Sneakers</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className='category-container'>
-        {/* <img /> */}
-        <div className='category-body-container'>
-          <h2>Womens</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className='category-container'>
-        {/* <img /> */}
-        <div className='category-body-container'>
-          <h2>Mens</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
+      {/* render the categories using map and categoryItem component  */}
     </div>
   );
 };
 
 export default App;
-
