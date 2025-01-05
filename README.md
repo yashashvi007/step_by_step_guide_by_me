@@ -22,9 +22,9 @@ Remember to replace the config variable in your firebase.utils.js with your own 
 
 After forking this repository and cloning it down, you will have access to all the lesson branches with code at different checkpoints throughout the course. If for some reason you need to work from the codebase at one of these lesson branch checkpoints, follow these steps:
 
-1. Checkout to the lesson-# (let's use lesson-15 as an example) branch
+1. Checkout to the step-# (let's use step-3 as an example) branch
 ```
-git checkout lesson-15
+git checkout step-3
 ```
 2. Branch off from step-3. This will create a new branch where the code of step-3 is the basis for your new branch. Yo
 ```
