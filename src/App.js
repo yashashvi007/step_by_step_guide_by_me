@@ -1,7 +1,8 @@
 import './categories.styles.scss';
 
 // install sass
-// npm install -g sass
+// npm i sass --save-dev
+// https://sass-lang.com/guide/
 const App = () => {
   const categories = [
     {
