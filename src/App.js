@@ -1,45 +1,93 @@
-import Directory from './components/directory/directory.component';
+import { Routes, Route } from 'react-router-dom';
 
+import Home from './routes/home/home.component';
+
+// Hey karishma if you are here and you can see the screen
+// dammmnnn you solved that error
+// please dont shout at me for doing that😣, i done that intentionally so that you can learn doiing some debugging
+// okay but if you are here, YOU ARE DOING GREAT FEW MORE STEPS AND YOU'LL BE A MASTER HEHE
+// one remember one thing, Paths are made by walking only, AND I BELIEVE IN YOU MORE THAN ANYONE YOU CAN DO IT😊😊
+
+
+import Navigation from './routes/navigation/navigation.component';
+import SignIn from './routes/sign-in/sign-in.component';
+
+const Shop = () => {
+  return <h1>I am the shop page</h1>;
+};
+
+// so what i want you to do in this 
+// ui mai upar pe navigation hona hi chahiye and then navigation bar ke neeche 
+// ek /shop route hona chahiye jo shop page ko show kare
+// ek /sign-in route hona chahiye jo sign-in page ko dikhae
 const App = () => {
-
-  // Great job karishma 🥳
-  // You are finally here 
-  // okay so ab karenge routing 
-  // whats is routing? 
-  // React Router DOM is a popular library in the React ecosystem that enables routing in web applications. It allows developers to manage and navigate between different views or pages in a React application while maintaining a single-page application (SPA) architecture. This means the browser doesn't need to reload the entire page when navigating, creating a seamless and dynamic user experience.
-  // npm i react-router-dom@6
-  // and now using the documentation ek route banao '/' 
-  // and then ek folder routes ke nam se and then usme ek folder home ke name se and usme ek file home.jsx usme ye sara code utha ke patak do and use '/' path pe render karao
-  // okay see you in next step 5 😁
-  const categories = [
-    {
-      id: 1,
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-    },
-    {
-      id: 2,
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-    },
-    {
-      id: 3,
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-    },
-    {
-      id: 4,
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    },
-    {
-      id: 5,
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-    },
-  ];
-
-  return <Directory categories={categories} />;
+  return (
+    // implement routing here
+  );
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Solution be like aap phir aagaye, i would say thoda google karo, chat gpt karo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Solution - okay okay koi baat nhi dekhlo mujhe, per dekh ke samajhna jarur 
+{/* <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='shop' element={<Shop />} />
+        <Route path='sign-in' element={<SignIn />} />
+      </Route>
+    </Routes> */}
+// nhi samajh aaye to copy paste on chatgpt and try to understand from him 
