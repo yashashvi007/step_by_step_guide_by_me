@@ -26,7 +26,7 @@ After forking this repository and cloning it down, you will have access to all t
 ```
 git checkout lesson-15
 ```
-2. Branch off from lesson-15. This will create a new branch where the code of lesson-15 is the basis for your new branch. You can name your new branch whatever you want! Let's say we use my-main-branch as the name.
+2. Branch off from step-3. This will create a new branch where the code of step-3 is the basis for your new branch. Yo
 ```
 git checkout -b my-main-branch
 ```
