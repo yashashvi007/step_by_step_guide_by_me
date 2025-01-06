@@ -17,9 +17,10 @@ const Shop = () => {
 };
 
 // so what i want you to do in this 
-// ui mai upar pe navigation hona hi chahiye and then navigation bar ke neeche 
+// ui mai upar pe navigation hona hi chahiye and then navigation bar mai
 // ek /shop route hona chahiye jo shop page ko show kare
 // ek /sign-in route hona chahiye jo sign-in page ko dikhae
+// and navigation bar har page pe hona chahiye
 const App = () => {
   return (
     // implement routing here
