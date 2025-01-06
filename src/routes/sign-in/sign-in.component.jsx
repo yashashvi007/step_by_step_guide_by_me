@@ -1,14 +1,11 @@
 import {
     signInWithGooglePopup,
-    createUserProfileDocument,
+    createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
 const SignIn = () => {
     const logGoogleUser = async () => {
-        // do 2 things here 
-        // open the google pop up for sign in 
-        // then create a User Profile
-        // sneeky peeky all the methods exists in code already 
+        // implement create user here
     };
 
     return (
@@ -34,6 +31,25 @@ export default SignIn;
 
 
 
-// Solution -
-// const response = await signInWithGooglePopup();
-// createUserProfileDocument(response);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Solution-
+// const { user } = await signInWithGooglePopup();
+// const userDocRef = await createUserDocumentFromAuth(user);

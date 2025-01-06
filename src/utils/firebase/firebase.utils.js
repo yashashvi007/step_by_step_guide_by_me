@@ -7,6 +7,7 @@ import {
     signInWithPopup,
     GoogleAuthProvider,
 } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCmLZ4Eu7LM3pA0qMGMuRoI_IW6t3qKeOI",
@@ -18,18 +19,73 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-
 const provider = new GoogleAuthProvider();
 
 provider.setCustomParameters({
     prompt: 'select_account',
 });
 
-export const createUserProfileDocument = async (userAuth, additionalData) => {
-    if (!userAuth) return;
-
-    console.log(userAuth);
-};
-
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+export const db = getFirestore();
+
+export const createUserDocumentFromAuth = async (userAuth) => {
+    // it's time to do some database now 
+    // i want you to create a collection for users
+    // each document should contain displayName, user email and the timestamp user createdAt
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Solution -
+// const userDocRef = doc(db, 'users', userAuth.uid);
+
+// const userSnapshot = await getDoc(userDocRef);
+
+// if (!userSnapshot.exists()) {
+//     const { displayName, email } = userAuth;
+//     const createdAt = new Date();
+
+//     try {
+//         await setDoc(userDocRef, {
+//             displayName,
+//             email,
+//             createdAt,
+//         });
+//     } catch (error) {
+//         console.log('error creating the user', error.message);
+//     }
+// }
+
+// return userDocRef;
