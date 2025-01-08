@@ -5,9 +5,9 @@ import {
     signInWithPopup,
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCmLZ4Eu7LM3pA0qMGMuRoI_IW6t3qKeOI",
@@ -38,33 +38,15 @@ export const createUserDocumentFromAuth = async (
     userAuth,
     additionalInformation = {}
 ) => {
-    if (!userAuth) return;
-
-    const userDocRef = doc(db, 'users', userAuth.uid);
-
-    const userSnapshot = await getDoc(userDocRef);
-
-    if (!userSnapshot.exists()) {
-        const { displayName, email } = userAuth;
-        const createdAt = new Date();
-
-        try {
-            await setDoc(userDocRef, {
-                displayName,
-                email,
-                createdAt,
-                ...additionalInformation,
-            });
-        } catch (error) {
-            console.log('error creating the user', error.message);
-        }
-    }
-
-    return userDocRef;
+    // do it yourself no solution this time for this as you already done it😁
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
+    // do it yourself no solution this time for this as you already done it🥳
+};
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
 
-    return await createUserWithEmailAndPassword(auth, email, password);
+    return await signInWithEmailAndPassword(auth, email, password);
 };
