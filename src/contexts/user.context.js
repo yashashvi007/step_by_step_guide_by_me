@@ -5,6 +5,10 @@ import {
     createUserDocumentFromAuth,
 } from '../utils/firebase/firebase.utils';
 
+// - createContext: Creates a shared data container
+// Creates a container with default values:
+// currentUser: Starts as null (no user)
+// setCurrentUser: A placeholder function
 export const UserContext = createContext({
     setCurrentUser: () => null,
     currentUser: null,

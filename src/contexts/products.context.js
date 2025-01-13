@@ -1,0 +1,1 @@
+// create a product context that will hold the products data, the products dummy data is in the shop-data.json file
