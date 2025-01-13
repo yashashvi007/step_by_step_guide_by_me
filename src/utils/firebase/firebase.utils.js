@@ -38,10 +38,35 @@ export const createUserDocumentFromAuth = async (
     userAuth,
     additionalInformation = {}
 ) => {
+    if(!userAuth) return;
+    const userDocRef = doc(db,'users',userAuth.uid);
+    const userSnapshot = await getDoc(userDocRef);
+    if(!userSnapshot.exit()){
+        try {
+           await setDoc(userDocRef,{
+            displayName:userAuth.displayName,
+            email:userAuth.email,
+            password:userAuth.password,
+            ...additionalInformation,
+           }) ;
+        } catch (error) {
+           console.log("error creating user documnet") 
+        }
+
+    }
     // do it yourself no solution this time for this as you already done it😁
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
+    if (!email || !password) return;
+    try {
+      const userCrediential = await createUserWithEmailAndPassword(auth,email,password);
+      const {user} = userCrediential;
+      await createUserDocumentFromAuth(user);
+      return user;  
+    } catch (error) {
+        console.log("error in creating user and passwaord",error);
+    }
     // do it yourself no solution this time for this as you already done it🥳
 };
 
