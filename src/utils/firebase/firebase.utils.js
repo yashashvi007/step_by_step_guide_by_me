@@ -10,14 +10,13 @@ import {
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCmLZ4Eu7LM3pA0qMGMuRoI_IW6t3qKeOI",
-    authDomain: "react-ecommerce-9ff61.firebaseapp.com",
-    projectId: "react-ecommerce-9ff61",
-    storageBucket: "react-ecommerce-9ff61.appspot.com",
-    messagingSenderId: "922648227542",
-    appId: "1:922648227542:web:5ce0984f2edb77dfd56377"
+    apiKey: "AIzaSyDXSCORNzXkJx7_JflEPJjoWSgJL67fiWE",
+    authDomain: "e-commerce-35114.firebaseapp.com",
+    projectId: "e-commerce-35114",
+    storageBucket: "e-commerce-35114.firebasestorage.app",
+    messagingSenderId: "186450182311",
+    appId: "1:186450182311:web:0f69e6a224e079ba185b82"
 };
-
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -38,19 +37,19 @@ export const createUserDocumentFromAuth = async (
     userAuth,
     additionalInformation = {}
 ) => {
-    if(!userAuth) return;
-    const userDocRef = doc(db,'users',userAuth.uid);
+    if (!userAuth) return;
+    const userDocRef = doc(db, 'users', userAuth.uid);
     const userSnapshot = await getDoc(userDocRef);
-    if(!userSnapshot.exit()){
+    if (!userSnapshot.exists()) {
         try {
-           await setDoc(userDocRef,{
-            displayName:userAuth.displayName,
-            email:userAuth.email,
-            password:userAuth.password,
-            ...additionalInformation,
-           }) ;
+            await setDoc(userDocRef, {
+                displayName: userAuth.displayName,
+                email: userAuth.email,
+                password: userAuth.password,
+                ...additionalInformation,
+            });
         } catch (error) {
-           console.log("error creating user documnet") 
+            console.log("error creating user documnet")
         }
 
     }
@@ -60,12 +59,12 @@ export const createUserDocumentFromAuth = async (
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
     try {
-      const userCrediential = await createUserWithEmailAndPassword(auth,email,password);
-      const {user} = userCrediential;
-      await createUserDocumentFromAuth(user);
-      return user;  
+        const userCrediential = await createUserWithEmailAndPassword(auth, email, password);
+        const { user } = userCrediential;
+        await createUserDocumentFromAuth(user);
+        return user;
     } catch (error) {
-        console.log("error in creating user and passwaord",error);
+        console.log("error in creating user and passwaord", error);
     }
     // do it yourself no solution this time for this as you already done it🥳
 };
