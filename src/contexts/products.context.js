@@ -1,1 +1,17 @@
-// create a product context that will hold the products data, the products dummy data is in the shop-data.json file
+import { createContext, useState } from 'react';
+
+import PRODUCTS from '../shop-data.json';
+
+export const ProductsContext = createContext({
+  products: [],
+});
+
+export const ProductsProvider = ({ children }) => {
+  const [products, setProducts] = useState(PRODUCTS);
+  const value = { products };
+  return (
+    <ProductsContext.Provider value={value}>
+      {children}
+    </ProductsContext.Provider>
+  );
+};

@@ -1,3 +1,21 @@
-// create a shop page that will get the products from the product context and thenn render it on shop page using Product card and send details of product in product card
+import { useContext } from 'react';
 
- 
+import ProductCard from '../../components/product-card/product-card.component';
+
+import { ProductsContext } from '../../contexts/products.context';
+
+import './shop.styles.scss';
+
+const Shop = () => {
+  const { products } = useContext(ProductsContext);
+
+  return (
+    <div className='products-container'>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  );
+};
+
+export default Shop;
